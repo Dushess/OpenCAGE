@@ -51,7 +51,7 @@ namespace Updater
             try
             {
                 if (File.Exists("Mod Tools.exe")) File.Delete("Mod Tools.exe");
-                if (File.Exists("OpenCAGE.exe")) File.Delete("OpenCAGE.exe");
+                if (File.Exists("OpenCAGE.exe")) File.Delete("OpenCAGE.exe"); //This line
             }
             catch
             {
@@ -78,7 +78,7 @@ namespace Updater
                     UpdateProgress.Value = 100;
 
                     //Check to see if we need to download any new assets
-                    JObject asset_manifest_new = JObject.Parse(File.ReadAllText(PathToAssets + "assets.manifest"));
+                    JObject asset_manifest_new = JObject.Parse(File.ReadAllText(PathToAssets + "assets.manifest")); //And this thing
                     foreach (JObject manifest_entry_new in asset_manifest_new["archives"])
                     {
                         bool upToDate = false;
